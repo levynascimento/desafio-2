@@ -8,6 +8,11 @@ const StyledContainer = styled.div`
 const StyledChildren = styled.div`
   max-width: 900px;
   width: 100%;
+
+  @media (max-width: 388px) {
+    max-width: 1000px;
+    width: 140%
+  }
 `
 
 

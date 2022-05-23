@@ -20,11 +20,19 @@ const SearchContainer = styled.div`
   @media (max-width: 668px) {
     padding: 110px 12px 20px 12px;
   }
+
+  @media (max-width: 390px) {
+    padding: 110px 12px 20px 92px;
+  }
+
+  @media (max-width: 320px) {
+    padding: 110px 25px 20px 92px;
+  }
 `
 const Lupa = styled.div`
   position: absolute;
   left: 142px;
-  top: 120px
+  top: 120px;
 `
 
 

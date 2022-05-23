@@ -4,8 +4,8 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (max-width: 391px) {
-    padding: 5px
+  @media (max-width: 390px) {
+    padding-left: 60px
   }
 `
 

@@ -9,7 +9,6 @@ import Search from '../src/components/inputs/Search'
 import Slider from '../src/components/icons/Slider'
 import PageContainer from '../src/components/layout/PageContainer'
 import Container from '../src/components/layout/Container'
-import ButtonContainer from '../src/components/layout/ButtonContainer'
 import CardAnuncios from '../src/components/cards/CardAnuncios'
 
 const ArrowContainer = styled.div`
@@ -22,6 +21,15 @@ const DivContainer = styled.div`
   flex-direction: column;
   justify-content: center
 
+`
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 390px) {
+    padding-left: 60px
+  }
 `
 
 const CardContainer = styled.div`

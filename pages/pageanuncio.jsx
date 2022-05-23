@@ -5,24 +5,32 @@ import { BsArrowLeft } from "react-icons/bs"
 import { useRouter } from 'next/router'
 
 import Button from '../src/components/inputs/Button'
-import PageContainer from '../src/components/layout/PageContainer'
 import Search from '../src/components/inputs/Search'
 import Slider from '../src/components/icons/Slider'
 import Container from '../src/components/layout/Container'
-import ButtonContainer from '../src/components/layout/ButtonContainer'
 import Card from '../src/components/cards/Card'
 
 const ArrowContainer = styled.div`
   padding: 40px 0 30px 130px;
-  cursor: pointer
+  cursor: pointer;
+  
 `
 
 const DivContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: center
+  justify-content: center;
+  padding: 0 20px
 
+`
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 388px) {
+    padding-left: 80px
+  }
 `
 
 const CardContainer = styled.div`
@@ -30,7 +38,17 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  margin-top: 40px
+  margin-top: 40px;
+  padding: 0 10px;
+
+  @media (max-width: 388px) {
+    padding-left: 80px
+  }
+
+  @media (max-width: 320px) {
+    padding-left: 80px
+  }
+
 `
 
 const MeuAnuncio = styled.h1`
@@ -39,23 +57,53 @@ const MeuAnuncio = styled.h1`
 `
 
 const MeuAnuncioContainer = styled.div`
-  text-align: center;
-  margin-top: 100px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+
+  @media (max-width: 390px) {
+    padding-left: 80px
+  }
 `
 
 const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0px 0 20px 125px;
+  padding: 0px 20px 20px 20px;
   align-items: center;
   gap: 10px;
-  position: relative
+  position: relative;
+
+  @media (max-width: 400px) {
+    padding: 0px 100px 20px 100px;
+  }
+
+  @media (max-width: 388px) {
+    padding: 0px 30px 20px 100px;
+  }
+
+  @media (max-width: 340px) {
+    padding: 0px 40px 20px 100px;
+  }
+
+ 
 `
 
 const Lupa = styled.div`
   position: absolute;
   left: 140px;
   top: 11px
+`
+
+const PageContainer = styled.div`
+  background-color: ${props => props.theme.white};
+  height: 100vh;
+
+  @media (max-width: 556px) {
+    height: 100vh;
+    overflow-y: auto
+  }
 `
 
 const PageAnuncio = () => {

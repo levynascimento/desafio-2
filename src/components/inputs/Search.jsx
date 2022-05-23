@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { AiOutlineSearch } from "react-icons/ai"
 
-const Search = styled.input`
+const StyledSearch = styled.input`
   resize: none;
   width: 600px;
   padding: 10px 50px;
@@ -21,11 +22,24 @@ const Search = styled.input`
 `
 
 const ContainerStyledSearch = styled.div`
-
+  position: relative
 `
 
+const Lupa = styled.div`
+  position: absolute;
+  left: 140px;
+  top: 11px
+`
 
-
-
+const Search = () => {
+  return (
+    <ContainerStyledSearch>
+        <Lupa>
+          <AiOutlineSearch size = '25' />
+        </Lupa>
+        <StyledSearch placeholder = "Buscar" rows = "1" />
+    </ContainerStyledSearch>
+  )
+}
 
 export default Search
