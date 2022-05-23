@@ -20,7 +20,6 @@ const ArrowContainer = styled.div`
 const DivContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center
 
 `

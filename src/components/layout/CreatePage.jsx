@@ -15,7 +15,11 @@ const SearchContainer = styled.div`
   padding: 110px 12px 20px 0;
   align-items: center;
   gap: 10px;
-  position: relative
+  position: relative;
+
+  @media (max-width: 668px) {
+    padding: 110px 12px 20px 12px;
+  }
 `
 const Lupa = styled.div`
   position: absolute;
@@ -49,7 +53,7 @@ const CreatePage = () => {
         </Slider>
       </SearchContainer>
       <ButtonContainer>
-        <Button onClick = {handleClickForm} >ADICIONAR VEÍCULO</Button>
+        <Button onClick = {handleClickForm} >ADICIONAR</Button>
       </ButtonContainer>  
     </PageContainer>
   )

@@ -19,7 +19,7 @@ const Form = styled.form`
 `
 
 const BackgroundFormContainer = styled.div`
-  padding-right: 60px
+  
 `
 
 const ButtonContainer = styled.div`
