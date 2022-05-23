@@ -77,7 +77,7 @@ const MeuAnuncioContainer = styled.div`
 const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0px 120px 20px 0px;
+  padding: 0px 120px 20px 120px;
   align-items: center;
   gap: 10px;
   position: relative;
@@ -97,11 +97,6 @@ const SearchContainer = styled.div`
   @media (max-width: 340px) {
     padding: 0px 40px 20px 100px;
   }
-`
-
-const Lupa = styled.div`
-  position: absolute;
-  left: 0;
 `
 
 const AnuncioContainer = styled.div`

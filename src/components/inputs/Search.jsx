@@ -27,8 +27,8 @@ const ContainerStyledSearch = styled.div`
 
 const Lupa = styled.div`
   position: absolute;
-  left: 140px;
-  top: 11px
+  left: 15px;
+  top: 10px
 `
 
 const Search = () => {

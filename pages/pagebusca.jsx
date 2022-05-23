@@ -86,10 +86,7 @@ const PageBusca = () => {
             <BsArrowLeft size = '35' onClick = {handleClickIndex} />
           </ArrowContainer>
           <SearchContainer>
-            <Lupa>
-              <AiOutlineSearch size = '25' />
-            </Lupa> 
-            <Search placeholder = "Buscar"  rows = "1" />
+            <Search />
             <Slider>
               <BsSliders size = '25' onClick = {handleClickFiltroBusca} />
             </Slider>  

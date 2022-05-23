@@ -126,13 +126,10 @@ const PageAnuncio = () => {
             <BsArrowLeft size = '35' onClick = {handleClickIndex} />
           </ArrowContainer>
           <SearchContainer>
-            <Lupa>
-              <AiOutlineSearch size = '25' />
-            </Lupa>
-            <Search placeholder = "Buscar" rows = "1" />
-            <Slider>
-              <BsSliders size = '25' onClick = {handleClickFiltro} />
-            </Slider>  
+           <Search />
+           <Slider>
+            <BsSliders size = '25' onClick = {handleClickFiltro} />
+           </Slider>  
           </SearchContainer>
         </DivContainer>
         <ButtonContainer>

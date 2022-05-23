@@ -52,10 +52,7 @@ const CreatePage = () => {
   return (
     <PageContainer>
       <SearchContainer>
-        <Lupa>
-          <AiOutlineSearch size = '25' />
-        </Lupa>
-        <Search placeholder = "Buscar"  rows = "1" />
+        <Search />
         <Slider>
           <BsSliders size = '25' onClick ={handleClickFiltro} /> 
         </Slider>
