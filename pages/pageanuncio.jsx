@@ -73,7 +73,6 @@ const SearchContainer = styled.div`
   padding: 0px 20px 20px 20px;
   align-items: center;
   gap: 10px;
-  position: relative;
 
   @media (max-width: 400px) {
     padding: 0px 100px 20px 100px;

@@ -58,7 +58,6 @@ const SearchContainer = styled.div`
   padding: 0px 0 20px 125px;
   align-items: center;
   gap: 10px;
-  position: relative
 `
 
 const AnuncioContainer = styled.div`

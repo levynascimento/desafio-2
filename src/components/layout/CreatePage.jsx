@@ -15,7 +15,6 @@ const SearchContainer = styled.div`
   padding: 110px 12px 20px 0;
   align-items: center;
   gap: 10px;
-  position: relative;
 
   @media (max-width: 668px) {
     padding: 110px 12px 20px 12px;
@@ -29,12 +28,6 @@ const SearchContainer = styled.div`
     padding: 110px 25px 20px 92px;
   }
 `
-const Lupa = styled.div`
-  position: absolute;
-  left: 142px;
-  top: 120px;
-`
-
 
 const CreatePage = () => {
 
