@@ -12,21 +12,12 @@ import ButtonContainer from './ButtonContainer'
 const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 110px 12px 20px 0;
   align-items: center;
   gap: 10px;
+`
 
-  @media (max-width: 668px) {
-    padding: 110px 12px 20px 12px;
-  }
-
-  @media (max-width: 390px) {
-    padding: 110px 12px 20px 92px;
-  }
-
-  @media (max-width: 320px) {
-    padding: 110px 25px 20px 92px;
-  }
+const FollowtheWhite = styled.div`
+  padding: 0 20px
 `
 
 const CreatePage = () => {
@@ -43,7 +34,7 @@ const CreatePage = () => {
 
 
   return (
-    <PageContainer>
+    <PageContainer> 
       <SearchContainer>
         <Search />
         <Slider>
@@ -52,7 +43,7 @@ const CreatePage = () => {
       </SearchContainer>
       <ButtonContainer>
         <Button onClick = {handleClickForm} >ADICIONAR</Button>
-      </ButtonContainer>  
+      </ButtonContainer> 
     </PageContainer>
   )
 }

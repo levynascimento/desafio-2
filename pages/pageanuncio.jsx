@@ -70,22 +70,9 @@ const MeuAnuncioContainer = styled.div`
 const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0px 20px 20px 20px;
+  padding: 0px 20px;
   align-items: center;
   gap: 10px;
-
-  @media (max-width: 400px) {
-    padding: 0px 100px 20px 100px;
-  }
-
-  @media (max-width: 388px) {
-    padding: 0px 30px 20px 100px;
-  }
-
-  @media (max-width: 340px) {
-    padding: 0px 40px 20px 100px;
-  }
-
  
 `
 
@@ -97,12 +84,9 @@ const Lupa = styled.div`
 
 const PageContainer = styled.div`
   background-color: ${props => props.theme.white};
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%
 
-  @media (max-width: 556px) {
-    height: 100vh;
-    overflow-y: auto
-  }
 `
 
 const PageAnuncio = () => {
@@ -118,9 +102,9 @@ const PageAnuncio = () => {
   }
 
   return(
-    <Container>
-      <PageContainer>
-        <DivContainer>
+    <Container> 
+      <PageContainer> 
+        <DivContainer> 
           <ArrowContainer>
             <BsArrowLeft size = '35' onClick = {handleClickIndex} />
           </ArrowContainer>
