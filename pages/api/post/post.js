@@ -12,14 +12,19 @@ const postSchema = Joi.object({
   Marca: Joi.string().required().max(50),
   Cor: Joi.string().required().max(50),
   Ano: Joi.number().required().min(1884).max(2022),
-  Placa: Joi.string().required()
+  Placa: Joi.string().required().max(7)
 })
 
 
 const post = createHandler()
-  .post( validate({ body: postSchema }), (req, res) => {
-    postCreate(req.body)
-    res.status(200).json({ teste: "ok" })
+  .post( validate({ body: postSchema }), async (req, res) => {
+    try {
+      const createdPost = await postCreate(req.body)
+      res.status(201).json(createdPost)
+    
+    } catch (err) {
+      throw err
+    }
   })
 
 
