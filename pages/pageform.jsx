@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import { BsArrowLeft } from "react-icons/bs"
 import { useRouter } from 'next/router'
+import { useForm } from 'react-hook-form'
+import { joiResolver } from '@hookform/resolvers/joi'
+
+import { postSchema } from '../modules/post/post.schema'
 
 import ContainerForm from '../src/components/layout/ContainerForm'
 import Container from '../src/components/layout/Container'
@@ -44,12 +48,19 @@ const Divmain = styled.div`
 
 const PageForm = () => {
 
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: joiResolver(postSchema)
+  })
+
+  const handleForm = (data) => {
+    console.log(data)
+  }
+
   const router = useRouter()
 
-  const handleClickButtonSave = (e) => {
-    e.preventDefault()
-    router.push('/pageanuncio')
-  }
+  //const handleClickButtonSave = () => {
+   //  router.push('/pageanuncio')
+ // }
 
   const handleClickArrowForm = () => {
     router.push('/')
@@ -67,14 +78,14 @@ const PageForm = () => {
               </ArrowContainer> 
                 <BackgroundFormContainer>
                   <PageFormContainer> 
-                    <Form>
-                      <Input label = "Nome"/>
-                      <Input label = "Marca"/>
-                      <Input label = "Cor"/>
-                      <Input label = "Ano"/>
-                      <Input label = "Placa"/>
+                    <Form onSubmit = {handleSubmit(handleForm)} >
+                      <Input label = "Nome" {...register('Nome')} />
+                      <Input label = "Marca" {...register('Marca')} />
+                      <Input label = "Cor" {...register('Cor')} />
+                      <Input label = "Ano" {...register('Ano')} />
+                      <Input label = "Placa" {...register('Placa')} />
                       <ButtonContainer>
-                        <ButtonForm onClick = {handleClickButtonSave} > SALVAR </ButtonForm>
+                        <ButtonForm type = "submit" > SALVAR </ButtonForm>
                       </ButtonContainer>   
                     </Form>    
                   </PageFormContainer> 
