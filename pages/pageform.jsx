@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { joiResolver } from '@hookform/resolvers/joi'
 import axios from 'axios'
 
-import { postSchema } from '../modules/post/post.schema'
+import { postSchema } from '../modules/post/vehicles.schema'
 
 import ContainerForm from '../src/components/layout/ContainerForm'
 import Container from '../src/components/layout/Container'
@@ -56,7 +56,7 @@ const PageForm = () => {
 
   const handleForm = async (data) => {
     try {
-      const { status } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/post/post`, data)
+      const { status } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/vehicles`, data)
       if (status === 201) {
         router.push('/pageanuncio')
       }

@@ -3,6 +3,8 @@ import { AiOutlineSearch } from "react-icons/ai"
 import { BsSliders } from "react-icons/bs"
 import { BsArrowLeft } from "react-icons/bs"
 import { useRouter } from 'next/router'
+import axios from 'axios'
+import useSWR from 'swr'
 
 import Button from '../src/components/inputs/Button'
 import Search from '../src/components/inputs/Search'
@@ -89,8 +91,11 @@ const PageContainer = styled.div`
 
 `
 
-const PageAnuncio = () => {
+const fetcher = url => axios.get(url).then(res => res.data)
 
+const PageAnuncio = () => {
+  const { data } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/api/vehicles`, fetcher)
+  console.log(data)
   const router = useRouter()
 
   const handleClickFiltro = () => {
@@ -122,8 +127,19 @@ const PageAnuncio = () => {
           <MeuAnuncio> Meus Anúncios </MeuAnuncio>
         </MeuAnuncioContainer>
         <CardContainer>
-          <Card />
-          <Card />
+        {
+              data?.map(vehicles => 
+                <Card 
+                  key = {vehicles._id}
+                  nome = {vehicles.Nome}
+                  marca = {vehicles.Marca}
+                  cor = {vehicles.Cor}
+                  ano = {vehicles.Ano}
+                  placa = {vehicles.Placa}
+                />
+
+              )
+            }
         </CardContainer> 
       </PageContainer> 
     </Container>
