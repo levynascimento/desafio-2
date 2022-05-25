@@ -48,7 +48,7 @@ const Divmain = styled.div`
 
 const PageForm = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { control, handleSubmit, formState: { errors } } = useForm({
     resolver: joiResolver(postSchema)
   })
 
@@ -79,13 +79,13 @@ const PageForm = () => {
                 <BackgroundFormContainer>
                   <PageFormContainer> 
                     <Form onSubmit = {handleSubmit(handleForm)} >
-                      <Input label = "Nome" {...register('Nome')} />
-                      <Input label = "Marca" {...register('Marca')} />
-                      <Input label = "Cor" {...register('Cor')} />
-                      <Input label = "Ano" {...register('Ano')} />
-                      <Input label = "Placa" {...register('Placa')} />
+                      <Input label = "Nome" name = "Nome" control = {control} />
+                      <Input label = "Marca" name = "Marca" control = {control} />
+                      <Input label = "Cor" name = "Cor" control = {control} />
+                      <Input label = "Ano" name = "Ano" control = {control} />
+                      <Input label = "Placa" name = "Placa" control = {control} />
                       <ButtonContainer>
-                        <ButtonForm type = "submit" > SALVAR </ButtonForm>
+                        <ButtonForm type = "submit" disabled = {Object.keys(errors).length > 0} > SALVAR </ButtonForm>
                       </ButtonContainer>   
                     </Form>    
                   </PageFormContainer> 

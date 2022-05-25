@@ -9,14 +9,18 @@ const ButtonForm = styled.button`
   border-radius: 35px;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  cursor: pointer;
   transition: 0.5s;
-
   text-align: center;
+
+  ${props => !props.disabled && 'cursor: pointer;'}; 
 
 
   :hover {
     background-color: #4DAD9C;
+  }
+
+  :disabled {
+    background-color: ${props => props.theme.disabled};
   }
 `
 

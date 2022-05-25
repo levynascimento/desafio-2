@@ -6,7 +6,9 @@ const theme = {
   backgroundCardColor: '#F04F4F',
   black: '#3A3A3A',
   white: '#F9F9F9',
-  buttonFiltro: '#FFFFFF'
+  buttonFiltro: '#FFFFFF',
+  error: 'red',
+  disabled: 'grey',
 
 }
 
