@@ -3,6 +3,7 @@ import { BsArrowLeft } from "react-icons/bs"
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 import { joiResolver } from '@hookform/resolvers/joi'
+import axios from 'axios'
 
 import { postSchema } from '../modules/post/post.schema'
 
@@ -12,6 +13,7 @@ import PageContainer from '../src/components/layout/PageContainer'
 import PageFormContainer from '../src/components/layout/PageFormContainer'
 import ButtonForm from '../src/components/inputs/ButtonForm'
 import Input from '../src/components/inputs/Input'
+import { responseSymbol } from 'next/dist/server/web/spec-compliant/fetch-event'
 
 const Form = styled.form`
   display: flex;
@@ -48,19 +50,26 @@ const Divmain = styled.div`
 
 const PageForm = () => {
 
-  const { control, handleSubmit, formState: { errors } } = useForm({
+  const { control, handleSubmit, formState: { errors }, setError} = useForm({
     resolver: joiResolver(postSchema)
   })
 
-  const handleForm = (data) => {
-    console.log(data)
+  const handleForm = async (data) => {
+    try {
+      const { status } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/post/post`, data)
+      if (status === 201) {
+        router.push('/pageanuncio')
+      }
+    } catch (err) {
+      if (err.response.data.code === 11000) {
+        setError(err.response.data.duplicatedKey, {
+          type: 'duplicated'
+        })
+      }
+    }
   }
 
   const router = useRouter()
-
-  //const handleClickButtonSave = () => {
-   //  router.push('/pageanuncio')
- // }
 
   const handleClickArrowForm = () => {
     router.push('/')

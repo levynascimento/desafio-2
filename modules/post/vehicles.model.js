@@ -8,4 +8,4 @@ const PostSchema = new mongoose.Schema({
   Placa: { type: String, required: true, maxlength: 7, unique: true },
 })
 
-export default mongoose.models.Post || mongoose.model('Post', PostSchema)
+export default mongoose.models.User || mongoose.model('User', PostSchema)

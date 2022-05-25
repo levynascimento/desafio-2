@@ -1,4 +1,4 @@
-import User from './post.model'
+import User from './vehicles.model'
 
 export const postCreate = async (body) => {
   try {
@@ -15,4 +15,9 @@ export const postCreate = async (body) => {
   }
 
   
+}
+
+
+export const getPosts = async (limit = 9) => {
+  return await User.find().limit(limit)
 }

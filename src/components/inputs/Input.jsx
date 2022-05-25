@@ -41,7 +41,8 @@ const errorMessage = {
   'number.min': 'O Ano precisa ser maior que 1884.',
   'number.max': 'O Ano pode ser até 2022.',
   'string.min': 'A placa precisa ter 7 caracteres.',
-  'string.max': 'A placa precisa ter 7 caracteres.'
+  'string.max': 'A placa precisa ter 7 caracteres.',
+  'duplicated': 'Essa placa já existe, coloque outra, por favor.'
 }
 
 const Input = ({ label, name, control, defaultValue = '',...props }) => {
