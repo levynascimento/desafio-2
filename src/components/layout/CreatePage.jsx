@@ -12,13 +12,11 @@ import ButtonContainer from './ButtonContainer'
 const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
+  padding: 0 0 20px 0;
   align-items: center;
   gap: 10px;
 `
 
-const FollowtheWhite = styled.div`
-  padding: 0 20px
-`
 
 const CreatePage = () => {
 

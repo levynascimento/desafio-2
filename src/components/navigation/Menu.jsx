@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 
+
 const Delete = styled.img`
   cursor: pointer
 `
@@ -22,11 +23,12 @@ const ContainerMenu = styled.div`
 `
 
 function Menu ({onClick}) {
+ 
   return (
       <ContainerMenu>
         <Edit src = "/edit.svg" height = "30px" />
         <Delete src = "/delete.svg" height = "30px" onClick={onClick} />
-        <Heart src = "/heart.svg" height = "30px" />
+        <Heart src = "/heart.svg" height = "30px"  />
       </ContainerMenu>
   )
 }

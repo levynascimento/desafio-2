@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 import { useSWRConfig } from 'swr'
 
+
 import Menu from '../navigation/Menu'
 
 
@@ -13,10 +14,10 @@ const CardContainer = styled.div`
 `
 
 const TesteContainer = styled.div`
-  display: flex;
+  display: block;
   flex-direction: column;
   font-size: 18px;
-  padding: 70px 0 0 15px;
+  padding: 80px 0 0 15px;
 
 `
 
@@ -40,13 +41,16 @@ function Card ({nome, marca, cor, ano, placa, id}) {
       console.error(err)
     }
   }
+
+
+  
   return (
       <CardContainer>
         <ContainerMenu>
-          <Menu onClick = {handleDelete}/>
+          <Menu onClick = {handleDelete} />
         </ContainerMenu>
         <TesteContainer>
-          <p> Nome: {nome}</p>
+          <p> Nome: {nome} </p>
           <p> Marca: {marca} </p>
           <p> Cor: {cor} </p>
           <p> Ano: {ano} </p>

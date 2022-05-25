@@ -72,7 +72,7 @@ const MeuAnuncioContainer = styled.div`
 const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0px 20px;
+  padding: 0 0 20px 0;
   align-items: center;
   gap: 10px;
  
@@ -95,7 +95,7 @@ const fetcher = url => axios.get(url).then(res => res.data)
 
 const PageAnuncio = () => {
   const { data } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/api/vehicles`, fetcher)
-  console.log(data)
+
   const router = useRouter()
 
   const handleClickFiltro = () => {

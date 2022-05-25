@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { AiOutlineSearch } from "react-icons/ai"
 import { BsSliders } from "react-icons/bs"
 import { BsArrowLeft } from "react-icons/bs"
+import axios from 'axios'
+import useSWR from 'swr'
 
 import Button from '../src/components/inputs/Button'
 import Search from '../src/components/inputs/Search'
@@ -9,6 +11,9 @@ import Slider from '../src/components/icons/Slider'
 import Container from '../src/components/layout/Container'
 import Card from '../src/components/cards/Card'
 import CardFavorito from '../src/components/cards/CardFavorito'
+
+
+
 
 const ArrowContainer = styled.div`
   padding: 40px 0 30px 130px;
@@ -28,19 +33,12 @@ const PageContainer = styled.div`
   height: 100vh;
   overflow-y: auto;
 
-  @media (max-width: 556px) {
-    height: 100vh;
-    overflow-y: auto
-  }
 `
 
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (max-width: 390px) {
-    padding-left: 60px
-  }
 `
 
 const CardContainer = styled.div`
@@ -51,13 +49,6 @@ const CardContainer = styled.div`
   align-items: center;
   margin-top: 40px;
 
-  @media (max-width: 388px) {
-    padding-left: 80px
-  }
-
-  @media (max-width: 320px) {
-    padding-left: 80px
-  }
 `
 
 const MeuAnuncio = styled.h1`
@@ -69,33 +60,16 @@ const MeuAnuncioContainer = styled.div`
   text-align: center;
   margin-top: 100px;
 
-  @media (max-width: 390px) {
-    padding-left: 80px
-  }
 `
 
 const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0px 120px 20px 120px;
+  padding: 0 120px 20px 120px;
   align-items: center;
   gap: 10px;
 
-  @media (max-width: 768px) {
-    padding: 0px 100px 20px 100px;
-  }
-
-  @media (max-width: 730px) {
-    padding: 0px 50px 20px 70px;
-  }
-
-  @media (max-width: 388px) {
-    padding: 0px 30px 20px 100px;
-  }
-
-  @media (max-width: 340px) {
-    padding: 0px 40px 20px 100px;
-  }
+  
 `
 
 const AnuncioContainer = styled.div`
@@ -103,7 +77,13 @@ const AnuncioContainer = styled.div`
   margin-top: 100px
 `
 
+const fetcher = url => axios.get(url).then(res => res.data)
+
 const PageAnuncio = () => {
+  const { data } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/api/vehicles`, fetcher)
+
+ 
+
   return(
     <Container>
       <PageContainer>
@@ -126,18 +106,25 @@ const PageAnuncio = () => {
         </MeuAnuncioContainer>
         <CardContainer>
           <CardFavorito />
-          <CardFavorito />
         </CardContainer>
         <AnuncioContainer>
           <MeuAnuncio> Anúncios </MeuAnuncio>
         </AnuncioContainer>
         <CardContainer>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+        {
+              data?.map(vehicles => 
+                <Card 
+                  key = {vehicles._id}
+                  nome = {vehicles.Nome}
+                  marca = {vehicles.Marca}
+                  cor = {vehicles.Cor}
+                  ano = {vehicles.Ano}
+                  placa = {vehicles.Placa}
+                  id = {vehicles._id}
+                />
+
+              )
+            }
         </CardContainer> 
       </PageContainer> 
     </Container>

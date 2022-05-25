@@ -11,7 +11,9 @@ const CardContainer = styled.div`
 `
 
 const TesteContainer = styled.div`
-  font-size: 20px;
+  display: block;
+  flex-direction: column;
+  font-size: 18px;
   padding: 70px 0 0 15px;
 
 `
@@ -20,14 +22,18 @@ const ContainerMenu = styled.div`
   float: right;
 `
 
-function CardFavorito () {
+function CardFavorito ({nome, marca, cor, ano, placa, id}) {
   return (
       <CardContainer>
         <ContainerMenu>
           <MenuFavorito />
         </ContainerMenu>
         <TesteContainer>
-          teste
+          <p> Nome: {nome} </p>
+          <p> Marca: {marca} </p>
+          <p> Cor: {cor} </p>
+          <p> Ano: {ano} </p>
+          <p> Placa: {placa} </p>
         </TesteContainer>
         
       </CardContainer>

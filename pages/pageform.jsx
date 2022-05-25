@@ -13,7 +13,6 @@ import PageContainer from '../src/components/layout/PageContainer'
 import PageFormContainer from '../src/components/layout/PageFormContainer'
 import ButtonForm from '../src/components/inputs/ButtonForm'
 import Input from '../src/components/inputs/Input'
-import { responseSymbol } from 'next/dist/server/web/spec-compliant/fetch-event'
 
 const Form = styled.form`
   display: flex;

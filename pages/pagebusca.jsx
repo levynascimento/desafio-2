@@ -12,7 +12,7 @@ import Container from '../src/components/layout/Container'
 import CardAnuncios from '../src/components/cards/CardAnuncios'
 
 const ArrowContainer = styled.div`
-  padding: 40px 0 30px 130px;
+  padding: 0px 0 30px 130px;
   cursor: pointer
 `
 
@@ -27,9 +27,6 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (max-width: 390px) {
-    padding-left: 60px
-  }
 `
 
 const CardContainer = styled.div`
@@ -38,7 +35,7 @@ const CardContainer = styled.div`
   justify-content: center;
   gap: 30px;
   align-items: center;
-  margin-top: 40px
+  margin-top: 40px;
 `
 
 const MeuAnuncio = styled.h1`
@@ -46,16 +43,10 @@ const MeuAnuncio = styled.h1`
   font-size: 25px
 `
 
-const Lupa = styled.div`
-  position: absolute;
-  left: 140px;
-  top: 11px
-`
-
 const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0px 0 20px 125px;
+  padding: 0 0 20px 0;
   align-items: center;
   gap: 10px;
 `
