@@ -1,9 +1,9 @@
 import createHandler from '../../lib/middleware/nextConnect'
 
-import { postCreate, getPosts } from '../../modules/post/vehicles.service'
+import { postCreate, getPosts, deletePost } from '../../modules/post/vehicles.service'
 
 import validate  from '../../lib/middleware/validation'
-import { postSchema } from '../../modules/post/vehicles.schema'
+import { postSchema, deletePostSchema } from '../../modules/post/vehicles.schema'
 
 
 
@@ -31,7 +31,18 @@ const post = createHandler()
       return res.status(500).send(err.message)
     }
     })
- 
+  .delete(validate(deletePostSchema), async(req, res) => {
+    try {
+      const deletedPost = await deletePost(req.body.id)
+      if (deletedPost)
+        return res.status(200).send({ ok: true })
+
+      return res.status(400).send('post not found')
+
+    } catch (err) {
+      return res.status(500).send(err.message)
+    }
+  })
 
 
 export default post

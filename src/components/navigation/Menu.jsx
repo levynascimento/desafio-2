@@ -21,16 +21,13 @@ const ContainerMenu = styled.div`
   gap: 7px
 `
 
-function Menu ({ options }) {
+function Menu ({onClick}) {
   return (
-    <>
       <ContainerMenu>
         <Edit src = "/edit.svg" height = "30px" />
-        <Delete src = "/delete.svg" height = "30px" />
+        <Delete src = "/delete.svg" height = "30px" onClick={onClick} />
         <Heart src = "/heart.svg" height = "30px" />
       </ContainerMenu>
-    </>
-    
   )
 }
 

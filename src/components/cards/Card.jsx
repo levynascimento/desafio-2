@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import axios from 'axios'
+import { useSWRConfig } from 'swr'
 
 import Menu from '../navigation/Menu'
 
@@ -13,7 +15,7 @@ const CardContainer = styled.div`
 const TesteContainer = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 18px;
   padding: 70px 0 0 15px;
 
 `
@@ -22,18 +24,33 @@ const ContainerMenu = styled.div`
   float: right;
 `
 
-function Card ({nome, marca, cor, ano, placa}) {
+function Card ({nome, marca, cor, ano, placa, id}) {
+  const { mutate } = useSWRConfig()
+
+  const handleDelete = async () => {
+    try {
+      const response = await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/api/vehicles`, {
+        data: {
+          id
+        }
+      })
+      if(response.status === 200) 
+        mutate(`${process.env.NEXT_PUBLIC_API_URL}/api/vehicles`)
+    } catch(err) {
+      console.error(err)
+    }
+  }
   return (
       <CardContainer>
         <ContainerMenu>
-          <Menu />
+          <Menu onClick = {handleDelete}/>
         </ContainerMenu>
         <TesteContainer>
-          Nome: {nome}
-          Marca: {marca}
-          Cor: {cor}
-          Ano: {ano}
-          Placa: {placa}
+          <p> Nome: {nome}</p>
+          <p> Marca: {marca} </p>
+          <p> Cor: {cor} </p>
+          <p> Ano: {ano} </p>
+          <p> Placa: {placa} </p>
         </TesteContainer>
         
       </CardContainer>

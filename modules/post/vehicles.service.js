@@ -21,3 +21,10 @@ export const postCreate = async (body) => {
 export const getPosts = async (limit = 9) => {
   return await User.find().limit(limit)
 }
+
+export const deletePost = async(id) => {
+  return await User.findOneAndDelete({
+    _id: id,
+    
+  })
+}

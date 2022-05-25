@@ -136,6 +136,7 @@ const PageAnuncio = () => {
                   cor = {vehicles.Cor}
                   ano = {vehicles.Ano}
                   placa = {vehicles.Placa}
+                  id = {vehicles._id}
                 />
 
               )
