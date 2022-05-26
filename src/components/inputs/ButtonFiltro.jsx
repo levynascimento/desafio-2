@@ -11,7 +11,6 @@ const ButtonFiltro = styled.button`
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
   transition: 0.5s;
-
   text-align: center;
 
 
