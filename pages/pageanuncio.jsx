@@ -5,6 +5,7 @@ import { BsArrowLeft } from "react-icons/bs"
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import useSWR from 'swr'
+import { useEffect } from 'react'
 
 import Button from '../src/components/inputs/Button'
 import Search from '../src/components/inputs/Search'

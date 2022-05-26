@@ -53,8 +53,7 @@ const PageForm = () => {
 
   const router = useRouter()
 
-  const handleClickButtonFiltroSave = (e) => {
-    e.preventDefault()
+  const handleClickButtonFiltroSave = () => {
     router.push('/pagebusca')
   }
 
