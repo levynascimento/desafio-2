@@ -1,3 +1,6 @@
+Link do projeto na Vercel: https://desafio-2-seven.vercel.app/
+
+
 Este arquivo é pra explica como eu criei a aplicação web que consumiu uma API para gerenciar o CRUD de veículos.
 
 Eu fiz o front-end usando o Reactjs junto com o Nextjs pra dar uma otimizada. E no back-end eu também usei o Nextjs pra fazer essa comunicação com o Nodejs. Além disso, usei o Banco de Dados MongoDB e a ORM mongoose pra armazenar dados.
