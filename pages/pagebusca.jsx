@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { AiOutlineSearch } from "react-icons/ai"
 import { BsSliders } from "react-icons/bs"
 import { BsArrowLeft } from "react-icons/bs"
 import { useRouter } from 'next/router'

@@ -1,11 +1,9 @@
 import styled from 'styled-components'
-import { AiOutlineSearch } from "react-icons/ai"
 import { BsSliders } from "react-icons/bs"
 import { BsArrowLeft } from "react-icons/bs"
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import useSWR from 'swr'
-import { useEffect } from 'react'
 
 import Button from '../src/components/inputs/Button'
 import Search from '../src/components/inputs/Search'
@@ -30,10 +28,6 @@ const DivContainer = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-
-  @media (max-width: 388px) {
-    padding-left: 80px
-  }
 `
 
 const CardContainer = styled.div`
@@ -44,13 +38,6 @@ const CardContainer = styled.div`
   margin-top: 40px;
   padding: 0 10px;
 
-  @media (max-width: 388px) {
-    padding-left: 80px
-  }
-
-  @media (max-width: 320px) {
-    padding-left: 80px
-  }
 
 `
 
@@ -65,9 +52,6 @@ const MeuAnuncioContainer = styled.div`
   align-items: center;
   margin-top: 100px;
 
-  @media (max-width: 390px) {
-    padding-left: 80px
-  }
 `
 
 const SearchContainer = styled.div`
@@ -77,12 +61,6 @@ const SearchContainer = styled.div`
   align-items: center;
   gap: 10px;
  
-`
-
-const Lupa = styled.div`
-  position: absolute;
-  left: 140px;
-  top: 11px
 `
 
 const PageContainer = styled.div`

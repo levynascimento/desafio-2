@@ -13,7 +13,7 @@ const CardContainer = styled.div`
   margin-bottom: 15px
 `
 
-const TesteContainer = styled.div`
+const ContentContainer = styled.div`
   display: block;
   flex-direction: column;
   font-size: 18px;
@@ -49,13 +49,13 @@ function Card ({nome, marca, cor, ano, placa, id}) {
         <ContainerMenu>
           <Menu onClick = {handleDelete} />
         </ContainerMenu>
-        <TesteContainer>
+        <ContentContainer>
           <p> Nome: {nome} </p>
           <p> Marca: {marca} </p>
           <p> Cor: {cor} </p>
           <p> Ano: {ano} </p>
           <p> Placa: {placa} </p>
-        </TesteContainer>
+        </ContentContainer>
         
       </CardContainer>
   )

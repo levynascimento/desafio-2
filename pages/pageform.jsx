@@ -49,7 +49,7 @@ const Divmain = styled.div`
 
 const PageForm = () => {
 
-  const { control, handleSubmit, formState: { errors }, setError} = useForm({
+  const { control, handleSubmit,  formState: { errors }, setError} = useForm({
     resolver: joiResolver(postSchema)
   })
 

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { AiOutlineSearch } from "react-icons/ai"
 import { BsSliders } from "react-icons/bs"
 import { useRouter } from 'next/router'
 
@@ -16,6 +15,8 @@ const SearchContainer = styled.div`
   align-items: center;
   gap: 10px;
 `
+
+
 
 
 const CreatePage = () => {

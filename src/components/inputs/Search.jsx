@@ -14,6 +14,7 @@ const StyledSearch = styled.input`
   transition: 0.5s;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+  outline: none;
   
 
 
